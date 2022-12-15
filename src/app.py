@@ -20,7 +20,7 @@ app.layout = dbc.Container(
     [
         # Header for app
         html.H1(
-            'Doggodash', 
+            'DoggoDash', 
              style = { 
                 'color': 'white', 
                 'fontSize': 40,
