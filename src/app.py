@@ -456,33 +456,12 @@ def surprise_me(n):
     while (surprise_me_raw_df.isnull().any().any()):
         # print("something is null.  picking another sample.") #for debug
         surprise_me_raw_df = breed_rank_raw_df.sample()
-        
-"""     print("traits_raw_df:")
-    print(traits_raw_df.drop('Breed', axis=1).head())
-    print("surprise_me_raw_df columns:")
-    print(surprise_me_raw_df.columns)
-    
-    # Check data types of BreedID columns
-    print("Data type of BreedID in surprise_me_raw_df:", surprise_me_raw_df['BreedID'].dtype)
-    print("Data type of BreedID in traits_raw_df:", traits_raw_df['BreedID'].dtype)
-
-    # Check for missing values in BreedID columns
-    print("Missing values in BreedID column of surprise_me_raw_df:", surprise_me_raw_df['BreedID'].isnull().sum())
-    print("Missing values in BreedID column of traits_raw_df:", traits_raw_df['BreedID'].isnull().sum())
- 
-    # Print a few rows of each dataframe
-    print(surprise_me_raw_df.head())
-    print(traits_raw_df.head())
-"""
     
     # Merge the 2 dataframes together
     surprise_me_raw_df = surprise_me_raw_df.merge(
         traits_raw_df.drop('Breed', axis=1),
         how='left', on='BreedID'
     )
-    
-    print("after the merge:")
-    print(surprise_me_raw_df.head())
     
     # The following few lines of code is for changing the column names to tidy the "Rank year" and "Rank" columns.
     col_list = list()
