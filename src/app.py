@@ -377,7 +377,7 @@ def plot_altair(traits_list, positive_weight, negative_weight):
     top_5_rank_plot (altair to html object): altair chart object of yearly trend of ranks of top 5 dogs in html
     """
 
-    print(f"traits_list={traits_list}") #for debug
+    # print(f"traits_list={traits_list}") #for debug
     traits_df = traits_raw_df.set_index('BreedID')[traits_list]
     
     traits_df['score'] = 0
@@ -448,16 +448,16 @@ def plot_altair(traits_list, positive_weight, negative_weight):
 )
 
 def surprise_me(n):
-    print(f"n={n}") #for debug
+    # print(f"n={n}") #for debug
     if n:
         surprise_me_raw_df = breed_rank_raw_df.sample()
 
     # The following 3 lines is for avoiding picking a breed that does not have past rank data.
     while (surprise_me_raw_df.isnull().any().any()):
-        print("something is null.  picking another sample.") #for debug
+        # print("something is null.  picking another sample.") #for debug
         surprise_me_raw_df = breed_rank_raw_df.sample()
         
-    print("traits_raw_df:")
+"""     print("traits_raw_df:")
     print(traits_raw_df.drop('Breed', axis=1).head())
     print("surprise_me_raw_df columns:")
     print(surprise_me_raw_df.columns)
@@ -469,11 +469,11 @@ def surprise_me(n):
     # Check for missing values in BreedID columns
     print("Missing values in BreedID column of surprise_me_raw_df:", surprise_me_raw_df['BreedID'].isnull().sum())
     print("Missing values in BreedID column of traits_raw_df:", traits_raw_df['BreedID'].isnull().sum())
-
+ 
     # Print a few rows of each dataframe
     print(surprise_me_raw_df.head())
     print(traits_raw_df.head())
-
+"""
     
     # Merge the 2 dataframes together
     surprise_me_raw_df = surprise_me_raw_df.merge(
