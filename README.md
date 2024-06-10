@@ -1,6 +1,5 @@
 # DoggoDash
-Check it out [here](https://doggodash.onrender.com).
-
+Check it out [here](https://doggodash.onrender.com).  (Please be patient when the page loads since I am using the free tier with Render.com. For some unknown reason, "Surprise Me" may not load properly. If it is blank below the "Suprise Me" button, try to refresh on your browser. Thank you.)
 
 Welcome to DoggoDash! DoggoDash is an interactive web app created using Dash and Python which provides visualizations for users to explore the breeds of dog that best match their selected preferences. Whether you are a potential new dog owner or are curious about your current dog breed's ranking among others, DoggoDash can help you! 
 
@@ -20,7 +19,7 @@ Interested in contributing? Check out the [contributing guidelines](https://gith
 
 DoggoDash is built using [Dash](https://dash.plotly.com/), and thus Dash is required for contributing to the project. Dash can be installed by running:
 ```
-pip install dash
+pip install -r requirements.txt
 ```
 Once Dash is installed and the repository is cloned (following the instructions in the contributing guidelines), a local version of the app for testing can be built by running:
 ```
